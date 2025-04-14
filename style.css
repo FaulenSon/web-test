@@ -1,0 +1,27 @@
+.bg-section {
+  position: relative;
+  overflow: hidden; /* чтобы блюр не выходил за границы */
+}
+
+.bg-section::before {
+  content: '';
+  position: absolute;
+  inset: 0; /* заменяет top/left/right/bottom: 0 */
+  background-image: url('Images/first.jpg');
+  background-size: cover;
+  background-position: center;
+  filter: blur(6px); /* регулируешь размытие здесь */
+  transform: scale(1.05); /* чтобы блюр не обрезался на границах */
+  z-index: 0;
+}
+
+.bg-section > * {
+  position: relative;
+  z-index: 1;
+}
+.icon-white {
+  filter: invert(1); /* Инвертирует цвета изображения */
+}
+html {
+  scroll-behavior: smooth;
+}
