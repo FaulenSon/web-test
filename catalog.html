@@ -35,7 +35,7 @@
     <a href="index.html#reviews" class="hover:underline">Отзывы</a>
     <a href="index.html#contact" class="hover:underline">Контакты</a>
   </div>
-</div>
+
 
 <div class="flex items-center space-x-4">
   <button id="open-cart-btn" class="relative focus:outline-none">
@@ -95,16 +95,25 @@
                            class="w-full p-2 border border-gray-300 rounded-lg">
                 </div>
 
-                <!-- Категории -->
-				<div class="mb-6">
-					<h3 class="font-medium mb-3">Категории</h3>
-					<ul class="space-y-2">
-						<li><label><input type="checkbox" class="category-checkbox" value="Органические удобрения"> Органические удобрения</label></li>
-						<li><label><input type="checkbox" class="category-checkbox" value="Минеральные удобрения"> Минеральные удобрения</label></li>
-						<li><label><input type="checkbox" class="category-checkbox" value="Субстраты и грунты"> Субстраты и грунты</label></li>
-						<li><label><input type="checkbox" class="category-checkbox" value="Стимуляторы роста"> Стимуляторы роста</label></li>
-					</ul>
-				</div>
+<!-- Категории -->
+<div class="mb-6">
+  <h3 class="font-medium mb-3">Категории</h3>
+  <ul class="space-y-2">
+    <li><label><input type="checkbox" class="category-checkbox" value="Удобрения"> Удобрения</label></li>
+    <li><label><input type="checkbox" class="category-checkbox" value="Семена газона"> Семена газона</label></li>
+    <li><label><input type="checkbox" class="category-checkbox" value="Сидераты"> Сидераты</label></li>
+    <li><label><input type="checkbox" class="category-checkbox" value="Грунты"> Грунты</label></li>
+    <li><label><input type="checkbox" class="category-checkbox" value="Торфы"> Торфы</label></li>
+    <li><label><input type="checkbox" class="category-checkbox" value="Дрова"> Дрова</label></li>
+    <li><label><input type="checkbox" class="category-checkbox" value="Зимний ассортимент"> Зимний ассортимент</label></li>
+    <li><label><input type="checkbox" class="category-checkbox" value="Товары для благоустройства"> Товары для благоустройства</label></li>
+    <li><label><input type="checkbox" class="category-checkbox" value="Для стройки"> Для стройки</label></li>
+    <li><label><input type="checkbox" class="category-checkbox" value="Для животноводства"> Для животноводства</label></li>
+    <li><label><input type="checkbox" class="category-checkbox" value="Для дома и дачи"> Для дома и дачи</label></li>
+    <li><label><input type="checkbox" class="category-checkbox" value="Борьба с вредителями"> Борьба с вредителями</label></li>
+    <li><label><input type="checkbox" class="category-checkbox" value="Железобетонные изделия (ЖБИ)"> Железобетонные изделия (ЖБИ)</label></li>
+  </ul>
+</div>
 
                 <!-- Цена -->
 						<div class="mb-6">
@@ -156,8 +165,7 @@
 
 <!-- Футер -->
 <footer class="bg-green-800 text-white">
-  <div class="max-w-6xl mx-auto p-8 grid md:grid-cols-3 gap-8">
-    
+  <div class="container mx-auto p-8 grid md:grid-cols-3 gap-8">
     <!-- О компании -->
     <div>
       <h4 class="text-xl font-semibold mb-4">О компании</h4>
@@ -166,10 +174,10 @@
       </p>
     </div>
     
-    <!-- Контакты -->
-    <div>
+    <!-- Контакты (центрируем содержимое) -->
+    <div class="flex flex-col items-center">
       <h4 class="text-xl font-semibold mb-4">Контакты</h4>
-      <ul class="space-y-2">
+      <ul class="space-y-2 text-center">
         <li>📍 г. Минск, ул. Цветочная, 12</li>
         <li>📞 <a href="tel:+74951234567" class="hover:underline text-green-300">+375 (25) 935-84-46</a></li>
         <li>✉️ <a href="mailto:info@sadoviyray.ru" class="hover:underline text-green-300">info@sadoviyray.ru</a></li>
@@ -179,15 +187,14 @@
     <!-- Соцсети -->
     <div>
       <h4 class="text-xl font-semibold mb-4">Мы в соцсетях</h4>
-       <div class="flex space-x-4 mt-4 md:mt-0">
-      <a href="#"><img src="Icons/Telegram.svg" alt="Telegram" class="w-6 h-6"></a>
-      <a href="#"><img src="Icons/Viber.svg" alt="Viber" class="w-6 h-6"></a>
-      <a href="#"><img src="Icons/WhatsApp.svg" alt="WhatsApp" class="w-6 h-6"></a>
-      <a href="#"><img src="Icons/Instagram.svg" alt="Instagram" class="w-6 h-6"></a>
-      <a href="#"><img src="Icons/VK.svg" alt="VK" class="w-6 h-6"></a>
+      <div class="flex space-x-4 mt-4 md:mt-0">
+        <a href="#"><img src="Icons/Telegram.svg" alt="Telegram" class="w-6 h-6"></a>
+        <a href="#"><img src="Icons/Viber.svg" alt="Viber" class="w-6 h-6"></a>
+        <a href="#"><img src="Icons/WhatsApp.svg" alt="WhatsApp" class="w-6 h-6"></a>
+        <a href="#"><img src="Icons/Instagram.svg" alt="Instagram" class="w-6 h-6"></a>
+        <a href="#"><img src="Icons/VK.svg" alt="VK" class="w-6 h-6"></a>
+      </div>
     </div>
-    </div>
-
   </div>
 
   <div class="text-center py-4 bg-green-900 text-green-300 text-sm">

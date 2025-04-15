@@ -82,6 +82,13 @@
     50% { transform: translateY(-50px) rotate(180deg); }
     100% { transform: translateY(0) rotate(360deg); }
   }
+
+.cart-count {
+    transition: opacity 0.2s ease;
+}
+.cart-count.hidden {
+    opacity: 0;
+}
 html {
   scroll-behavior: smooth;
 }
