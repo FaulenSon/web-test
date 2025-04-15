@@ -336,15 +336,68 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     // Обработчик оформления заказа
-    if (checkoutBtn) {
+  if (checkoutBtn) {
         checkoutBtn.addEventListener('click', () => {
             if (cart.length === 0) return;
             
-            alert('Заказ оформлен! Товаров: ' + cart.length + '\nСумма: ' + 
-                cart.reduce((sum, item) => sum + (item.price * (item.quantity || 1)), 0) + ' руб.');
+            // Показываем модальное окно оформления заказа
+            document.getElementById('checkout-modal').classList.remove('hidden');
+        });
+    }
+
+    // Функция закрытия модального окна оформления заказа
+    window.closeCheckout = function() {
+        document.getElementById('checkout-modal').classList.add('hidden');
+    };
+
+    // Обработчик формы оформления заказа
+    const checkoutForm = document.getElementById('checkout-form');
+    if (checkoutForm) {
+        checkoutForm.addEventListener('submit', function(e) {
+            e.preventDefault();
             
+            // Собираем данные формы
+            const formData = new FormData(this);
+            const orderData = {
+                customer: {
+                    name: formData.get('name'),
+                    phone: formData.get('phone'),
+                    email: formData.get('email'),
+                    address: formData.get('address'),
+                    deliveryTime: formData.get('delivery-time'),
+                    comment: formData.get('comment')
+                },
+                products: cart,
+                total: cart.reduce((sum, item) => sum + (item.price * (item.quantity || 1)), 0),
+                date: new Date().toISOString()
+            };
+
+            // Здесь должна быть отправка данных на сервер
+            console.log('Order data:', orderData);
+            
+            // В реальном проекте:
+            // fetch('/send-order.php', {
+            //     method: 'POST',
+            //     body: JSON.stringify(orderData)
+            // })
+            // .then(response => response.json())
+            // .then(data => {
+            //     if (data.success) {
+            //         alert('Заказ успешно оформлен! Номер вашего заказа: ' + data.orderId);
+            //         cart = [];
+            //         updateCart();
+            //         closeCheckout();
+            //         closeCart();
+            //     }
+            // });
+
+            // Для демонстрации просто показываем сообщение
+            alert(`Заказ успешно оформлен!\n\nФИО: ${orderData.customer.name}\nТелефон: ${orderData.customer.phone}\nСумма: ${orderData.total} руб.`);
+            
+            // Очищаем корзину и закрываем окна
             cart = [];
             updateCart();
+            closeCheckout();
             closeCart();
         });
     }
