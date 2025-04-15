@@ -14,6 +14,7 @@ collections:
     format: "json"
     extension: "json"
     fields:
+      - { label: "ID", name: "id", widget: "number", required: true }
       - { label: "Название", name: "name", widget: "string" }
       - { label: "Категория", name: "category", widget: "string" }
       - { label: "Цена", name: "price", widget: "number" }
