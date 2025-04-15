@@ -1,20 +1,11 @@
-<!doctype html>
+<!DOCTYPE html>
 <html>
   <head>
     <meta charset="utf-8" />
     <title>Admin</title>
-    <script src="https://unpkg.com/netlify-cms@^2.0.0/dist/netlify-cms.js"></script>
   </head>
   <body>
-    <!-- Куда CMS рендерит интерфейс -->
-    <script>
-      window.CMS_MANUAL_INIT = true;
-    </script>
-    <script type="module">
-      import CMS from "https://unpkg.com/netlify-cms-app@2.15.72/dist/netlify-cms-app.js";
-      import config from "./config.js";
-
-      CMS.init({ config });
-    </script>
+    <!-- Netlify CMS автоматически найдет config.yml и отрендерит интерфейс -->
+    <script src="https://unpkg.com/netlify-cms@^2.0.0/dist/netlify-cms.js"></script>
   </body>
 </html>
