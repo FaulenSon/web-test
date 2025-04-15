@@ -51,10 +51,28 @@
 </header>
 
 <!-- Первый экран -->
-<section class="h-screen flex flex-col items-center justify-center bg-cover bg-center text-center p-6 bg-section">
-  <h1 class="text-4xl md:text-6xl font-bold mb-4" data-aos="fade-up" style="color: white;">Удобрения для вашего сада</h1>
-  <p class="text-lg mb-6" data-aos="fade-up" data-aos-delay="200" style="color: white;">Лучшие натуральные удобрения для вашего сада и огорода</p>
-  <a href="#catalog" class="bg-green-600 hover:bg-green-800 text-white px-6 py-3 rounded-lg text-lg" data-aos="fade-up" data-aos-delay="400">Каталог товаров</a>
+<section class="h-screen flex flex-col items-center justify-center text-center p-6 relative overflow-hidden">
+  <!-- Анимированные элементы фона -->
+  <div class="absolute inset-0 bg-gradient-to-b from-green-900 to-green-600 opacity-90"></div>
+  
+  <!-- Анимированные листья -->
+<div class="leaf leaf-1"></div>
+<div class="leaf leaf-2"></div>
+<div class="leaf leaf-3"></div>
+<div class="leaf leaf-4"></div>
+<div class="leaf leaf-5"></div>
+<div class="leaf leaf-6"></div>
+<div class="leaf leaf-7"></div>
+<div class="leaf leaf-8"></div>
+  
+  <!-- Контент -->
+  <div class="relative z-10">
+    <h1 class="text-4xl md:text-6xl font-bold mb-4 text-white" data-aos="fade-up">Удобрения для вашего сада</h1>
+    <p class="text-xl mb-8 text-white opacity-90" data-aos="fade-up" data-aos-delay="200">Лучшие натуральные удобрения для вашего сада и огорода</p>
+    <a href="#catalog" class="bg-green-500 hover:bg-green-600 text-white px-8 py-4 rounded-full text-lg font-semibold transition-all transform hover:scale-105 shadow-lg" data-aos="fade-up" data-aos-delay="400">
+      Каталог товаров
+    </a>
+  </div>
 </section>
 
 <!-- Акция дня -->
