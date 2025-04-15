@@ -2,13 +2,13 @@ backend:
   name: git-gateway
   branch: main  # или другая ветка, если ты используешь другую
 
-media_folder: "images/uploads" # куда загружать картинки
-public_folder: "/images/uploads"
+media_folder: "public/images/uploads"  # путь для хранения изображений внутри public
+public_folder: "/images/uploads"  # путь для отображения изображений в публичной части сайта
 
 collections:
   - name: "products"
     label: "Товары"
-    folder: "data/products"
+    folder: "public/data/products"  # путь для продуктов
     create: true
     slug: "{{slug}}"
     format: "json"
