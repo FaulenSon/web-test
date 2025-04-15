@@ -1,0 +1,3 @@
+[build]
+  command = "npm run build:products"
+  publish = "public"  # или ваша папка с HTML (например, просто ".")
