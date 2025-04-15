@@ -1,0 +1,21 @@
+backend:
+  name: git-gateway
+  branch: main  # или другая ветка, если ты используешь другую
+
+media_folder: "images/uploads" # куда загружать картинки
+public_folder: "/images/uploads"
+
+collections:
+  - name: "products"
+    label: "Товары"
+    folder: "data/products"
+    create: true
+    slug: "{{slug}}"
+    format: "json"
+    extension: "json"
+    fields:
+      - { label: "Название", name: "name", widget: "string" }
+      - { label: "Категория", name: "category", widget: "string" }
+      - { label: "Цена", name: "price", widget: "number" }
+      - { label: "Описание", name: "description", widget: "text" }
+      - { label: "Изображение", name: "image", widget: "image" }

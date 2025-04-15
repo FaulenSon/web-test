@@ -1,0 +1,94 @@
+.bg-section {
+  position: relative;
+  overflow: hidden; /* чтобы блюр не выходил за границы */
+}
+
+.bg-section::before {
+  content: '';
+  position: absolute;
+  inset: 0; /* заменяет top/left/right/bottom: 0 */
+  background-image: url('Images/first.jpg');
+  background-size: cover;
+  background-position: center;
+  filter: blur(6px); /* регулируешь размытие здесь */
+  transform: scale(1.05); /* чтобы блюр не обрезался на границах */
+  z-index: 0;
+}
+
+.bg-section > * {
+  position: relative;
+  z-index: 1;
+}
+.icon-white {
+  filter: invert(1); /* Инвертирует цвета изображения */
+}
+
+.leaf {
+  position: absolute;
+  background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><path fill="%234CAF50" d="M50 0 Q90 30 50 90 Q10 30 50 0"/></svg>');
+  background-repeat: no-repeat;
+  background-size: contain;
+  opacity: 0.3;
+  pointer-events: none;
+  animation-duration: 20s;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+}
+
+.leaf-1 { width: 100px; height: 100px; top: 10%; left: 5%; animation-name: rotate1; }
+.leaf-2 { width: 150px; height: 150px; top: 70%; left: 80%; animation-name: rotate2; }
+.leaf-3 { width: 80px; height: 80px; top: 30%; left: 70%; animation-name: rotate3; }
+.leaf-4 { width: 120px; height: 120px; top: 20%; left: 25%; animation-name: rotate4; }
+.leaf-5 { width: 90px; height: 90px; top: 60%; left: 10%; animation-name: rotate5; }
+.leaf-6 { width: 130px; height: 130px; top: 80%; left: 60%; animation-name: rotate6; }
+.leaf-7 { width: 70px; height: 70px; top: 50%; left: 85%; animation-name: rotate7; }
+.leaf-8 { width: 110px; height: 110px; top: 30%; left: 40%; animation-name: rotate8; }
+
+@keyframes rotate1 {
+  from { transform: rotate(15deg); }
+  to   { transform: rotate(375deg); }
+}
+@keyframes rotate2 {
+  from { transform: rotate(45deg); }
+  to   { transform: rotate(405deg); }
+}
+@keyframes rotate3 {
+  from { transform: rotate(90deg); }
+  to   { transform: rotate(450deg); }
+}
+@keyframes rotate4 {
+  from { transform: rotate(120deg); }
+  to   { transform: rotate(480deg); }
+}
+@keyframes rotate5 {
+  from { transform: rotate(200deg); }
+  to   { transform: rotate(560deg); }
+}
+@keyframes rotate6 {
+  from { transform: rotate(270deg); }
+  to   { transform: rotate(630deg); }
+}
+@keyframes rotate7 {
+  from { transform: rotate(300deg); }
+  to   { transform: rotate(660deg); }
+}
+@keyframes rotate8 {
+  from { transform: rotate(330deg); }
+  to   { transform: rotate(690deg); }
+}
+
+  @keyframes float {
+    0% { transform: translateY(0) rotate(0deg); }
+    50% { transform: translateY(-50px) rotate(180deg); }
+    100% { transform: translateY(0) rotate(360deg); }
+  }
+
+.cart-count {
+    transition: opacity 0.2s ease;
+}
+.cart-count.hidden {
+    opacity: 0;
+}
+html {
+  scroll-behavior: smooth;
+}
