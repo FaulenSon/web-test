@@ -1,11 +1,15 @@
-document.addEventListener('DOMContentLoaded', async () => {
-  const response = await fetch('data/products.json');
-  const data = await response.json();
-  const products = data.products;
+document.addEventListener('DOMContentLoaded', () => {
+let products = [];
 
-  // Здесь — отрисовка карточек
-  console.log(products);
-});
+fetch('data/products.json')
+  .then(response => response.json())
+  .then(data => {
+    products = data;
+    applyFilters(); // запускаем фильтрацию и отображение
+  })
+  .catch(error => {
+    console.error('Ошибка при загрузке товаров:', error);
+  });
 
   // --- 2. СОСТОЯНИЕ ФИЛЬТРОВ И КОРЗИНЫ ---
   let filters = {
@@ -66,6 +70,24 @@ document.addEventListener('DOMContentLoaded', async () => {
 
     renderPagination(productsToRender.length);
 }
+
+function renderProducts(products) {
+    const container = document.getElementById('product-list');
+    container.innerHTML = '';
+
+    products.forEach(product => {
+      const card = document.createElement('div');
+      card.className = 'product-card';
+      card.innerHTML = `
+        <img src="${product.image}" alt="${product.name}" />
+        <h3>${product.name}</h3>
+        <p>${product.description}</p>
+        <strong>${product.price}₽</strong>
+        <button>В корзину</button>
+      `;
+      container.appendChild(card);
+    });
+  }
 
 function renderPagination(totalItems) {
   const pagination = document.getElementById('pagination');
