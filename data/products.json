@@ -4,7 +4,7 @@
     "name": "Комплексное удобрение",
     "category": "Минеральные удобрения",
     "price": 250,
-    "image": "Images/grunt.webp",
+    "image": "images/grunt.webp",
     "description": "Содержит сбалансированный набор макро- и микроэлементов."
   },
   {
@@ -12,7 +12,7 @@
     "name": "Комплексное удобрение",
     "category": "Минеральные удобрения",
     "price": 250,
-    "image": "Images/grunt.webp",
+    "image": "images/grunt.webp",
     "description": "Содержит сбалансированный набор макро- и микроэлементов."
   }
 ]
